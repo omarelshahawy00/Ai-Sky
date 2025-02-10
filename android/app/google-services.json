@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "20239223931",
+    "project_id": "ai-sky-6827d",
+    "storage_bucket": "ai-sky-6827d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20239223931:android:071aed1a4f1f29eb7ae6de",
+        "android_client_info": {
+          "package_name": "com.example.ai_sky"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHy6blkm5eHZYCUQRiPAWYZCScjGSDeCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
