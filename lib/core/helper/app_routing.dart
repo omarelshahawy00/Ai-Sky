@@ -1,5 +1,6 @@
 import 'package:ai_sky/features/auth/ui/screens/login_screen/login_screen.dart';
 import 'package:ai_sky/features/auth/ui/screens/sign_up_screen/sign_up_screen.dart';
+import 'package:ai_sky/features/home/ui/screens/home_screen.dart';
 import 'package:ai_sky/features/splash/ui/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,7 @@ class AppRouting {
         );
       case homeScreen:
         return MaterialPageRoute(
-          builder: (context) => Container(),
+          builder: (context) => const HomeScreen(),
         );
       default:
         return null;

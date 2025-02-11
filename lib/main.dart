@@ -8,7 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'core/helper/custom_bloc_observer.dart';
 
 void main() async {
-  //hello
+  //hallo
   getitSetup();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();

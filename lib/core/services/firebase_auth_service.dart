@@ -55,4 +55,8 @@ class FirebaseAuthService {
       throw CustomException('Something went wrong');
     }
   }
+
+  static bool isLoggedIn() {
+    return FirebaseAuth.instance.currentUser != null;
+  }
 }

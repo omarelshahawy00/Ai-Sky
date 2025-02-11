@@ -1,3 +1,4 @@
+import 'package:ai_sky/core/helper/app_routing.dart';
 import 'package:ai_sky/core/helper/build_error_bar.dart';
 import 'package:ai_sky/core/services/getit_service.dart';
 import 'package:ai_sky/core/widgets/custom_appbar.dart';
@@ -33,7 +34,7 @@ class LoginScreenBodyBlocConsumer extends StatelessWidget {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
-          buildSnackBar(context, 'success');
+          Navigator.pushNamed(context, AppRouting.homeScreen);
         } else if (state is LoginError) {
           buildSnackBar(context, state.message);
         }

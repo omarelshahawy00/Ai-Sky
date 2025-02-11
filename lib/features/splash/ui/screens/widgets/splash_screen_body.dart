@@ -1,4 +1,5 @@
 import 'package:ai_sky/core/helper/app_routing.dart';
+import 'package:ai_sky/core/services/firebase_auth_service.dart';
 import 'package:ai_sky/core/utils/const_assets.dart';
 import 'package:ai_sky/features/splash/ui/screens/widgets/background_clouds.dart';
 import 'package:ai_sky/features/splash/ui/screens/widgets/center_logo.dart';
@@ -15,9 +16,7 @@ class SplashScreenBody extends StatefulWidget {
 class _SplashScreenBodyState extends State<SplashScreenBody> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, AppRouting.loginScreen);
-    });
+    timingToNavigate();
     super.initState();
   }
 
@@ -28,6 +27,17 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
         BackgroundClouds(),
         CenterLogo(),
       ],
+    );
+  }
+
+  void timingToNavigate() {
+    Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        //TODO : check if user is logged in
+
+        Navigator.pushReplacementNamed(context, AppRouting.loginScreen);
+      },
     );
   }
 }

@@ -26,40 +26,42 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
     return Stack(
       children: [
         const BackgroundClouds(),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Form(
-            key: _formKey,
-            autovalidateMode: autovalidateMode,
-            child: Column(
-              spacing: 16,
-              children: [
-                const SizedBox(height: 8),
-                AppTextFormField(
-                  onSaved: (em) => email = em!,
-                  lableText: 'Email',
-                  fillColor: AppColors.lightBlue,
-                ),
-                PasswordField(
-                  onSavedPassword: (pass) => password = pass!,
-                ),
-                const SizedBox(height: 17),
-                AppTextButton(
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      _formKey.currentState!.save();
-                      context.read<LoginCubit>().loginUser(email, password);
-                    } else {
-                      setState(() {
-                        autovalidateMode = AutovalidateMode.always;
-                      });
-                    }
-                  },
-                  buttonText: 'Login',
-                  backgroundColor: AppColors.background,
-                ),
-                const DoNotHaveAcc(),
-              ],
+        SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Form(
+              key: _formKey,
+              autovalidateMode: autovalidateMode,
+              child: Column(
+                spacing: 16,
+                children: [
+                  const SizedBox(height: 8),
+                  AppTextFormField(
+                    onSaved: (em) => email = em!,
+                    lableText: 'Email',
+                    fillColor: AppColors.lightBlue,
+                  ),
+                  PasswordField(
+                    onSavedPassword: (pass) => password = pass!,
+                  ),
+                  const SizedBox(height: 17),
+                  AppTextButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        _formKey.currentState!.save();
+                        context.read<LoginCubit>().loginUser(email, password);
+                      } else {
+                        setState(() {
+                          autovalidateMode = AutovalidateMode.always;
+                        });
+                      }
+                    },
+                    buttonText: 'Login',
+                    backgroundColor: AppColors.background,
+                  ),
+                  const DoNotHaveAcc(),
+                ],
+              ),
             ),
           ),
         ),
