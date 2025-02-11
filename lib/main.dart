@@ -1,5 +1,6 @@
 import 'package:ai_sky/core/helper/app_routing.dart';
 import 'package:ai_sky/core/services/getit_service.dart';
+import 'package:ai_sky/core/services/shared_prefs.dart';
 import 'package:ai_sky/core/utils/app_colors.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   Bloc.observer = CustomBlocObserver();
+  await SharedPrefs.init();
   runApp(const AiSky());
 }
 

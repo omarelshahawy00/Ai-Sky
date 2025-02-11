@@ -36,10 +36,10 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^9.0.0
-  
   flutter_svg: ^2.0.17
   get_it: ^8.0.3
   modal_progress_hud_nsn: ^0.5.1
+  shared_preferences: ^2.5.2
 
 dev_dependencies:
   flutter_lints: ^5.0.0
