@@ -1,0 +1,1 @@
+const userIdStorageKey = 'userId';

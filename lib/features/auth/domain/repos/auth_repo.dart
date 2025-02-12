@@ -9,4 +9,6 @@ abstract class AuthRepo {
 
   Future<Either<Failure, User>> signInWithEmailAndPassword(
       String email, String password);
+
+  Future<void> saveUserId(String userId);
 }
