@@ -1,4 +1,5 @@
 import 'package:ai_sky/core/utils/app_colors.dart';
+import 'package:ai_sky/features/home/ui/screens/widgets/future_weather_days_bloc_builder.dart';
 import 'package:ai_sky/features/home/ui/screens/widgets/future_weather_item.dart';
 import 'package:ai_sky/features/home/ui/screens/widgets/user_welcome.dart';
 import 'package:ai_sky/features/home/ui/screens/widgets/weather_details.dart';
@@ -31,20 +32,7 @@ class HomeScreenBody extends StatelessWidget {
                 color: AppColors.darkBlue,
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: screenHeight * 0.03,
-                    vertical: screenHeight * 0.03),
-                child: const Row(
-                  children: [
-                    FutureWeatherItem(),
-                    Spacer(),
-                    FutureWeatherItem(),
-                    Spacer(),
-                    FutureWeatherItem(),
-                  ],
-                ),
-              ),
+              child: const FutureWeatherDaysBlocBuilder(),
             ),
           )
         ],

@@ -1,17 +1,17 @@
 import 'package:ai_sky/core/theming/styles.dart';
 import 'package:ai_sky/core/utils/app_colors.dart';
+import 'package:ai_sky/features/home/data/models/forecast_model.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class FutureWeatherItem extends StatelessWidget {
-  const FutureWeatherItem({super.key});
-
+  const FutureWeatherItem({super.key, required this.forecast});
+  final Forecastday forecast;
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-    DateTime date = DateTime.now();
-    String formattedDate = DateFormat('MMMM, d').format(date);
+    String date = forecast.date;
+
     return Container(
       height: screenHeight * .27,
       width: screenWidth * .22,
@@ -24,25 +24,25 @@ class FutureWeatherItem extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              formattedDate,
+              date,
               style: TextStyles.size13Weight400.copyWith(
                 color: Colors.white,
               ),
             ),
             const Spacer(),
             Text(
-              '27°',
+              '${forecast.day.avgtempC}',
               style: TextStyles.size23Weight700
                   .copyWith(color: Colors.white, fontSize: 30),
             ),
             const Spacer(),
             Image.network(
-              "https://cdn.weatherapi.com/weather/64x64/day/113.png",
+              "https:${forecast.day.condition.icon}",
               fit: BoxFit.fill,
             ),
             const Spacer(),
             Text(
-              'min / max',
+              '${forecast.day.maxtempC} / ${forecast.day.mintempC}',
               style: TextStyles.size13Weight600.copyWith(color: Colors.white),
             ),
           ],

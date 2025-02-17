@@ -17,7 +17,7 @@ class WeatherDetailsBlocBuilder extends StatelessWidget {
         } else if (state is WeatherError) {
           return Text(state.message);
         } else {
-          return const CircularProgressIndicator();
+          return const Center(child: CircularProgressIndicator());
         }
       },
     );

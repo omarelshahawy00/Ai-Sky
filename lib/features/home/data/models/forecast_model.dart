@@ -63,8 +63,8 @@ class Condition {
 
   factory Condition.fromJson(Map<String, dynamic> json) {
     return Condition(
-      text: json['text'],
-      icon: json['icon'],
+      text: json['text'] ?? '',
+      icon: json['icon'] ?? '',
     );
   }
 }

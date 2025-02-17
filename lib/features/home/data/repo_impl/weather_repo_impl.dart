@@ -18,7 +18,7 @@ class WeatherRepoImpl implements WeatherRepo {
       final res =
           await apiServices.getWeather(lat, lon); 
       final weatherModel = WeatherModel.fromJson(res); 
-      return right(weatherModel);
+      return right(weatherModel); 
     } on DioException catch (e) {
       final String errorMsg = e.response?.data['error']['message'] ??
           'Oops, there was an error. Try later...';

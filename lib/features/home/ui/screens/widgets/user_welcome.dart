@@ -9,7 +9,7 @@ class UserWelcome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String userName = SharedPrefs.getString(userNameStorageKey);
+    String userName = SharedPrefs.getString(userNameStorageKey) ?? '';
     return ListTile(
       title: Text(
         'Hello,',

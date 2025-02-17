@@ -17,9 +17,7 @@ class WeatherDetails extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                    //DateTime.now().day}/${DateTime.now().month}/${DateTime.now().year}\n${DateTime.now().hour}:${DateTime.now().minute
-                    'last update ${weather.current.lastUpdated}',
+                Text('last update ${weather.current.lastUpdated}',
                     style: TextStyles.size13Weight400.copyWith(
                       color: Colors.white,
                     )),
