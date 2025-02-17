@@ -1,9 +1,7 @@
 import 'package:ai_sky/features/auth/domain/repos/auth_repo.dart';
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:meta/meta.dart';
 
-import '../../../domain/entities/user_entity.dart';
 
 part 'login_state.dart';
 

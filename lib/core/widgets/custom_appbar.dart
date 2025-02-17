@@ -1,4 +1,3 @@
-import 'package:ai_sky/core/theming/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../theming/styles.dart';
