@@ -1,13 +1,11 @@
 import 'package:ai_sky/core/helper/app_routing.dart';
-import 'package:ai_sky/core/services/get_user_location.dart';
 import 'package:ai_sky/core/services/getit_service.dart';
 import 'package:ai_sky/core/services/shared_prefs.dart';
 import 'package:ai_sky/core/utils/app_colors.dart';
-import 'package:ai_sky/core/utils/constants.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:geolocator/geolocator.dart';
 import 'core/helper/custom_bloc_observer.dart';
 
 void main() async {
@@ -18,13 +16,6 @@ void main() async {
   await Firebase.initializeApp();
   Bloc.observer = CustomBlocObserver();
   await SharedPrefs.init();
-  await determinePosition().then(
-    (value) {
-      lon = value.longitude;
-      lat = value.latitude;
-      print({value.longitude, value.latitude});
-    },
-  );
   runApp(const AiSky());
 }
 
@@ -33,6 +24,7 @@ class AiSky extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return MaterialApp(
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.background,

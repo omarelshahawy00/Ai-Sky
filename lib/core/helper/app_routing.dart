@@ -32,7 +32,7 @@ class AppRouting {
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
             create: (context) => WeatherCubit(getIt.get<WeatherRepo>())
-              ..getCurrentWeather(lat, lon),
+              ,
             child: const HomeScreen(),
           ),
         );

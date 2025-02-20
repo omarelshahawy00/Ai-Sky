@@ -1,3 +1,4 @@
+import 'package:ai_sky/core/theming/styles.dart';
 import 'package:ai_sky/features/home/ui/manager/cubit/weather_cubit.dart';
 import 'package:ai_sky/features/home/ui/screens/widgets/future_weather_item.dart';
 import 'package:flutter/material.dart';
@@ -30,9 +31,13 @@ class FutureWeatherDaysBlocBuilder extends StatelessWidget {
             ),
           );
         } else if (state is WeatherError) {
-          return Text(state.message);
+          return Center(
+              child: Text(
+            state.message,
+            style: TextStyles.size13Weight600.copyWith(color: Colors.white),
+          ));
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(child: SizedBox());
         }
       },
     );
