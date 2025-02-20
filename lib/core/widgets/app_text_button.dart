@@ -41,7 +41,7 @@ class AppTextButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: borderRadius ?? BorderRadius.circular(16),
           side: borderSide ??
-              BorderSide(
+              const BorderSide(
                 color: Color(0xffDDDFDF),
                 width: 1,
               ),
@@ -53,7 +53,7 @@ class AppTextButton extends StatelessWidget {
       ),
       onPressed: onPressed,
       child: ListTile(
-        visualDensity: VisualDensity(
+        visualDensity: const VisualDensity(
           vertical: VisualDensity.minimumDensity,
         ),
         leading: leadingIcon,

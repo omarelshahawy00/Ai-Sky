@@ -36,7 +36,7 @@ class _SignUpScreenBodyState extends State<SignUpScreenBody> {
                 children: [
                   const SizedBox(height: 5),
                   InputAccountData(
-                    onSavedEmail: (value) => email = value!,
+                    onSavedEmail: (value) => email = value!.trim(),
                     onSavedPassword: (value) => password = value!,
                     onSavedUserName: (value) => userName = value!,
                   ),

@@ -1,5 +1,4 @@
 import 'package:ai_sky/core/helper/app_routing.dart';
-import 'package:ai_sky/core/theming/colors.dart';
 import 'package:ai_sky/core/theming/styles.dart';
 import 'package:ai_sky/core/utils/app_colors.dart';
 

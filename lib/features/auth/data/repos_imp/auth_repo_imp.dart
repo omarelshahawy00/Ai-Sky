@@ -25,6 +25,7 @@ class AuthRepoImp implements AuthRepo {
         email: email,
         userName: userName,
       ).toUserEntity();
+      SharedPrefs.setString(userNameStorageKey, userName);
       return right(userEnity);
     } on CustomException catch (e) {
       return left(ServerFailure(e.message));
@@ -41,7 +42,10 @@ class AuthRepoImp implements AuthRepo {
       var user =
           await firebaseAuthService.signInWithEmailAndPassword(email, password);
       var res = user.uid;
-      saveUserId(res);
+      String constUserNmae = SharedPrefs.getString(userNameStorageKey); 
+      saveUserId(res , constUserNmae);
+      
+
       return right(user);
     } on CustomException catch (e) {
       return left(ServerFailure(e.message));
@@ -52,8 +56,10 @@ class AuthRepoImp implements AuthRepo {
   }
 
   @override
-  Future<void> saveUserId(String userId) async {
+  Future<void> saveUserId(String userId ,String? userName) async {
     await SharedPrefs.setString(userIdStorageKey, userId);
+    await SharedPrefs.setString(userNameStorageKey, userName!);
     log(SharedPrefs.getString(userIdStorageKey));
+    log(SharedPrefs.getString(userNameStorageKey));
   }
 }

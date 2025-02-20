@@ -18,7 +18,7 @@ class LoginScreen extends StatelessWidget {
       appBar: buildAppbar(context, title: "Login", leading: const SizedBox()),
       body: BlocProvider(
         create: (context) => LoginCubit(getIt.get<AuthRepo>()),
-        child: LoginScreenBodyBlocConsumer(),
+        child: const LoginScreenBodyBlocConsumer(),
       ),
     );
   }
