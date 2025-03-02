@@ -2,6 +2,7 @@ import 'package:ai_sky/core/services/getit_service.dart';
 import 'package:ai_sky/features/auth/ui/screens/login_screen/login_screen.dart';
 import 'package:ai_sky/features/auth/ui/screens/sign_up_screen/sign_up_screen.dart';
 import 'package:ai_sky/features/home/domain/repo/weather_repo.dart';
+import 'package:ai_sky/features/home/ui/manager/ai_weather_prediction_cubit/ai_weather_prediction_cubit.dart' show AIPredictionCubit;
 import 'package:ai_sky/features/home/ui/manager/waeather_cubit/weather_cubit.dart';
 import 'package:ai_sky/features/home/ui/screens/home_screen.dart';
 import 'package:ai_sky/features/splash/ui/screens/splash_screen.dart';
@@ -30,8 +31,16 @@ class AppRouting {
         );
       case homeScreen:
         return MaterialPageRoute(
-          builder: (context) => BlocProvider(
-            create: (context) => WeatherCubit(getIt.get<WeatherRepo>()),
+          builder: (context) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => WeatherCubit(getIt.get<WeatherRepo>()),
+              ),
+              BlocProvider(
+                create: (context) =>
+                    AIPredictionCubit(getIt.get<WeatherRepo>()),
+              ),
+            ],
             child: const HomeScreen(),
           ),
         );
