@@ -35,12 +35,14 @@ class Day {
   final double mintempC;
   final double avgtempC;
   final Condition condition;
+  final int humidity;
 
   Day({
     required this.maxtempC,
     required this.mintempC,
     required this.avgtempC,
     required this.condition,
+    required this.humidity,
   });
   factory Day.fromJson(Map<String, dynamic> json) {
     return Day(
@@ -48,6 +50,7 @@ class Day {
       mintempC: json['mintemp_c'],
       avgtempC: json['avgtemp_c'],
       condition: Condition.fromJson(json['condition']),
+      humidity: json['avghumidity'],
     );
   }
 }

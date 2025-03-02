@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/services/get_user_location.dart';
-import '../manager/cubit/weather_cubit.dart';
+import '../manager/waeather_cubit/weather_cubit.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

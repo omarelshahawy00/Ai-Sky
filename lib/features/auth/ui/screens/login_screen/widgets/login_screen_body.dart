@@ -1,8 +1,4 @@
-import 'dart:developer';
-
-import 'package:ai_sky/core/services/get_user_location.dart';
 import 'package:ai_sky/core/utils/app_colors.dart';
-import 'package:ai_sky/core/utils/constants.dart';
 import 'package:ai_sky/core/widgets/app_text_button.dart';
 import 'package:ai_sky/core/widgets/app_text_form_field.dart';
 import 'package:ai_sky/core/widgets/password_field.dart';
@@ -50,7 +46,7 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                   ),
                   const SizedBox(height: 17),
                   AppTextButton(
-                    onPressed: ()  {
+                    onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         _formKey.currentState!.save();
                         context.read<LoginCubit>().loginUser(email, password);
@@ -59,8 +55,6 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                           autovalidateMode = AutovalidateMode.always;
                         });
                       }
-
-                     
                     },
                     buttonText: 'Login',
                     backgroundColor: AppColors.background,
